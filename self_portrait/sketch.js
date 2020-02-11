@@ -36,9 +36,6 @@ function draw() {
     fill('black');
     arc(160, 80, 80, 80, PI * 0.75, PI * 0.1, OPEN);
     
-    fill('white');
-    quad(100 + 60, 31 + 60, 86 + 60, 20 + 60, 69 + 60, 63 + 60, 30 + 60, 76 + 60);
-
     // nose
     fill('DARKTURQUOISE');
     noStroke();
