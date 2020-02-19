@@ -1,3 +1,10 @@
+    //position varibles
+var x = 200; // origin for face
+var y = 180;
+
+    //size variables
+var s = 200; // size of the face
+
 function setup() {
 	createCanvas(640, 360);
 }
@@ -12,18 +19,21 @@ function draw() {
     strokeWeight(3);
      
     // face area
-	ellipse(200, 180, 200); // face
+	ellipse(x, y, s); // face
+
+	// x++;
+	// s++;
 
 	fill('0, 81, 82, 127');
 	stroke(0, 81, 82);
-	circle(220, 160, 30); // right eye
-	circle(160, 160, 30, 10); // left eye
+	circle(x - 20, y + 160, s/30); // right eye
+	circle(x - 160, y + 160, 30, 10); // left eye
 
     // mouth
 	stroke('Black');
 	strokeWeight(2);
 	fill('white');
-	arc(200, 230, 80, 80, 0, PI + QUARTER_PI, CHORD);
+	arc(x - 200, 230, 80, 80, 0, PI + QUARTER_PI, CHORD);
 
     // right ear
     fill('blue');
@@ -34,10 +44,10 @@ function draw() {
 
     // Hat
     fill('black');
-    arc(160, 80, 80, 80, PI * 0.75, PI * 0.1, OPEN);
-
+    arc(x + 160, y - 80, 80, 80, PI * 0.75, PI * 0.1, OPEN);
+    
     // nose
     fill('DARKTURQUOISE');
     noStroke();
-    triangle(200, 180, 180, 200, 220, 190);
+    triangle(x - 200, x - 180, y - 180, x - 200, 220, 190);
 }
