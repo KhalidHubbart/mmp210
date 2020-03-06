@@ -1,8 +1,15 @@
 var remImage;
+var jamesImage;
+var smithImage;
+var jackieImage;
+var whatImage;
 
 function preload() {
     remImage = loadImage("rem.jpg");
     jamesImage = loadImage("james.jpg");
+    smithImage = loadImage("smith.jpg");
+    jackieImage = loadImage("jackie.jpg");
+    whatImage = loadImage("what.jpg");
 }
 
 function setup() {
@@ -11,12 +18,18 @@ function setup() {
 }
 
 function draw() {
-    background('lightblue');
+    background("lightblue");
 
-    if (mouseIsPressed) {
-        image(remImage, 0, 0, width, height);
-    } else {
-        image(jamesImage, 0, 0, width, height);
+    if(mouseIsPressed){
+        if (mouseX > width/2 && mouseY > height/2) {
+            image(remImage, width/2, height/2, width/2, height/2);
+        } else if (mouseX < width/2 && mouseY > height/2) {
+            image(jamesImage,0, height/2, width/2, height/2);
+        } else if (mouseX > width/2 && mouseY < height/2) {
+            image(smithImage, width/2, 0, width, height/2);
+        } else {
+            image(jackieImage,0, 0, width/2, height/2);
+        }
     }
 
     textSize(40);
@@ -27,8 +40,7 @@ function draw() {
     textFont('Segoe UI');
     textAlign(CENTER, TOP);
 
-    var welcome = 'Trying to remember';
-    var end = map(frameCount, 0, 200, 0, welcome.length);
+    var welcome = 'When Nobody';
     text(welcome.substring(0, end), 250, 0);
 
     textSize(40);
@@ -36,7 +48,7 @@ function draw() {
     textStyle(ITALIC);
     textAlign(CENTER, TOP);
 
-    var welcome = 'what you just said';
+    var welcome = 'Knows The Answer';
     var end = map(frameCount, 0, 200, 0, welcome.length);
-    text(welcome.substring(0, end), 250, 350);
+    text(welcome.substring(0, end), 250, 400);
 }
