@@ -4,8 +4,6 @@ var smithImage;
 var jackieImage;
 var whatImage;
 
-var remSize;
-var remSizeSpeed = 5;
 
 function preload() {
     remImage = loadImage("rem.jpg");
@@ -14,38 +12,12 @@ function preload() {
     jackieImage = loadImage("jackie.jpg");
     whatImage = loadImage("what.jpg");
 }
-
 function setup() {
     var canvas = createCanvas(500, 500);
-    canvas.drawingContext.miterLimit = 2;
-
-    x = width - 150;
-    y = height - 100;
-
-    remSize = width;
 }
 
 function draw() {
     background("lightblue");
-
-    if(mouseIsPressed){
-        if (mouseX > width/2 && mouseY > height/2) {
-            image(remImage, width/2, height/2, width/2, height/2);
-        } else if (mouseX < width/2 && mouseY > height/2) {
-            image(jamesImage,0, height/2, width/2, height/2);
-        } else if (mouseX > width/2 && mouseY < height/2) {
-            image(smithImage, width/2, 0, width, height/2);
-        } else {
-            image(jackieImage,0, 0, width/2, height/2);
-        }
-
-        image(remImage, width/2, height/2, remSize, remSize);
-
-        remSize += remSizeSpeed;
-        if (remSize > width * 2 || remSize < width - remSizeSpeed) {
-            remSizeSpeed *= -1;
-        }
-    }
 
     textSize(40);
     fill('white');
@@ -55,7 +27,7 @@ function draw() {
     textFont('Segoe UI');
     textAlign(CENTER, TOP);
 
-    var welcome = 'When Nobody';
+    var welcome = 'That one kid';
     text(welcome.substring(0, end), 250, 0);
 
     textSize(40);
@@ -63,7 +35,23 @@ function draw() {
     textStyle(ITALIC);
     textAlign(CENTER, TOP);
 
-    var welcome = 'Knows The Answer';
+    var welcome = 'with no Answer';
     var end = map(frameCount, 0, 200, 0, welcome.length);
     text(welcome.substring(0, end), 250, 400);
-}
+
+    image(remImage,0, 400, 100, 100);
+    image(jamesImage, 0, 0, 100, 100);
+    image(jackieImage,400, 0, 100, 100);
+    image(whatImage,400, 400, 100, 100);
+
+    translate(width/2, height/2);
+
+    var r = frameCount * PI /150;
+    rotate(r);
+
+    
+    image(smithImage, 0, 0, 100, 100);
+
+
+    }
+
