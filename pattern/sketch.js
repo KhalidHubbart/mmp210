@@ -21,7 +21,7 @@ function draw() {
         } else {
             //Yellow
             r = random(150, 200);
-            g = random(200, 250);
+            g = random(150, 250);
             b = random(200);
         }
 
@@ -29,6 +29,10 @@ function draw() {
         strokeWeight(4);
         line(x, 0, x + 100, height);
         line(x + 100, 0, x, height);
+        fill('blue');
+        stroke(0);
+        strokeWeight(3);
+        ellipse(x + 50, random(160, 200), 40);
 
         let s = random(40, 120);
         let y = random(s/2, height - s/2);
