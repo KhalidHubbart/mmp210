@@ -16,7 +16,7 @@ function add(){
     Enemys.push({
         x:random(width),
         y:random(height),
-        s:random(25, 100),
+        s:random(25, 50),
         xspeed:random(2, 10),
         yspeed:random(2, 10)
     });
