@@ -25,7 +25,7 @@ function add(){
 function preload(){
     skyImage = loadImage("sky.jpg");
     music = loadSound("stage 13.mp3");
-    dashSound=loadSound("das.wav");
+    dashSound=loadSound("dash.wav");
 }
 
 function setup() {
@@ -111,6 +111,7 @@ function games(){
     var d= dist(x, y, e.x, e.y);
         if (d< s/2 + e.s/2){
             playerdie=true;
+            dashSound.play();
         }
 
     }
