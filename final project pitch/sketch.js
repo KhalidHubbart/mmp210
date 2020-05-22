@@ -27,14 +27,14 @@ function draw() {
     } 
     else if (currentSlide == 1) {
         title = "How to play";
-        description = "The user would play as a square using the arrow keys to avoid getting hit from the circles. The user would also be able to change the music in the game.";
+        description = "The user would play as a blue cicle using the arrow keys to avoid getting hit from the red circles. The user would also be able to change the music in the game.";
     } 
     else if (currentSlide == 2) {
         title = "What going to be in it";
-        description = "The game would use p5 shapes like circles and squares. The backgorund would have music that plays.";
+        description = "The game would use p5 circles. The backgorund would have music that plays.";
 
        circle(750, 500, 150);
-       square(200, 450, 150); 
+       circle(200, 450, 150); 
     }
 
     textSize(80);
