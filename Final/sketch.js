@@ -116,7 +116,7 @@ function games(){
 
     }
 // Update score
-    text(score,10,10);
+    text(score,10,20);
     score+=1;
     if (score% 100==0){
         add()
